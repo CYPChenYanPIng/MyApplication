@@ -1,0 +1,30 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.example.jpushdemo"
+        minSdkVersion 9
+        targetSdkVersion 26
+        versionCode 330
+        versionName "3.3.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        manifestPlaceholders = [
+                JPUSH_APPKEY : "您应用的APPKEY",//值来自开发者平台取得的AppKey
+                JPUSH_CHANNEL: "default_developer",
+        ]
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+}

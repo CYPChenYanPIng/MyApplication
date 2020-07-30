@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">好丽友</string>
+    <string name="continuous_sign">连续签到%s</string>
+</resources>

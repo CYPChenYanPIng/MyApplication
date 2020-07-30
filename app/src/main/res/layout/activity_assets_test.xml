@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/iv_assets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_sdcard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_assets" />
+
+    <ImageView
+        android:id="@+id/iv_oss"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_sdcard" />
+
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <Button
+            android:id="@+id/bt_loadImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="加载图片" />
+
+        <Button
+            android:id="@+id/bt_sdcard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="写入sdcard" />
+
+        <Button
+            android:id="@+id/bt_webview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="加载网页" />
+
+        <Button
+            android:id="@+id/bt_file"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="读取文件" />
+
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/radio_group"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <Button
+            android:id="@+id/bt_music"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="播放音乐" />
+
+
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>

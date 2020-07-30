@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <TextView
+        android:id="@+id/tv_"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="连续签到"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@id/rn_tv"
+        app:layout_constraintBottom_toBottomOf="@id/rn_tv"/>
+
+    <scrollnumber.ScrollingNumbersView
+        android:id="@+id/snv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/tv_"
+        app:layout_constraintTop_toBottomOf="@id/fl_layout"
+        app:textSize="20sp"
+        android:visibility="gone"/>
+
+    <scrollnumber.RiseNumberTextView
+        android:id="@+id/rn_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/tv_"
+        app:layout_constraintTop_toBottomOf="@id/fl_layout"
+        android:visibility="gone"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/rn_tv"
+        app:layout_constraintTop_toTopOf="@id/rn_tv"
+        app:layout_constraintBottom_toBottomOf="@id/rn_tv"
+        android:text="天"/>
+
+    <TextView
+        android:id="@+id/tv_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="连续签到"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@id/bulleting"
+        app:layout_constraintBottom_toBottomOf="@id/bulleting"/>
+
+    <scrollnumber.BulletinBoardView
+        android:id="@+id/bulleting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/tv_1"
+        app:layout_constraintTop_toBottomOf="@id/tv_"
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/bulleting"
+        app:layout_constraintTop_toTopOf="@id/bulleting"
+        app:layout_constraintBottom_toBottomOf="@id/bulleting"
+        android:text="天"
+        android:textSize="25sp"/>
+</android.support.constraint.ConstraintLayout>
