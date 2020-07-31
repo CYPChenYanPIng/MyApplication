@@ -4,9 +4,11 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -18,6 +20,8 @@ import com.example.uxin.myapplication.R;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
+
+import util.CommonUtils;
 
 /**
  * @author chenyanping
@@ -99,18 +103,25 @@ public class SmothScrollTestActivity extends Activity implements View.OnClickLis
 
     class MyAdapter extends RecyclerView.Adapter{
         private ArrayList<Integer> list = new ArrayList();
+        private Context context = SmothScrollTestActivity.this;
 
         @Override
         public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-            return new NumBerViewHolder(NumBerViewHolder.getTextView(SmothScrollTestActivity.this));
+            // 正确的
+            View view = LayoutInflater.from(context).inflate(R.layout.item_smoth_num_layout,viewGroup,false);
+            return new MyViweHolder(view);
         }
+        //            return new NumBerViewHolder(NumBerViewHolder.getTextView(SmothScrollTestActivity.this));
 
         @Override
         public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int i) {
-            if (viewHolder instanceof NumBerViewHolder){
-                NumBerViewHolder numBerViewHolder = (NumBerViewHolder) viewHolder;
-                numBerViewHolder.setTextContent(String.valueOf(list.get(i)));
+            if (viewHolder instanceof MyViweHolder) {
+                ((MyViweHolder) viewHolder).tvNumber.setText(String.valueOf(list.get(i)));
             }
+//            if (viewHolder instanceof NumBerViewHolder){
+//                NumBerViewHolder numBerViewHolder = (NumBerViewHolder) viewHolder;
+//                numBerViewHolder.setTextContent(String.valueOf(list.get(i)));
+//            }
         }
 
         @Override
@@ -130,7 +141,7 @@ public class SmothScrollTestActivity extends Activity implements View.OnClickLis
 
         public static TextView getTextView(Context context){
             FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
-                    ViewGroup.LayoutParams.WRAP_CONTENT);
+                    CommonUtils.dip2px(context,200));
             TextView textView = new TextView(context);
             textView.setTextSize(26);
             textView.setGravity(Gravity.CENTER);
@@ -144,4 +155,14 @@ public class SmothScrollTestActivity extends Activity implements View.OnClickLis
             }
         }
     }
+
+    class MyViweHolder extends RecyclerView.ViewHolder{
+        private TextView tvNumber;
+
+        public MyViweHolder(@NonNull View itemView) {
+            super(itemView);
+            tvNumber = itemView.findViewById(R.id.tv_num);
+        }
+    }
+
 }

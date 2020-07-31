@@ -21,7 +21,7 @@ public class MyViewpagerFragmentAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        if (fragments != null && position >-1&& position>fragments.size()) {
+        if (fragments != null && position >-1&& position<fragments.size()) {
             return fragments.get(position);
         }
         return null;

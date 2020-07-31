@@ -16,7 +16,7 @@ import java.util.ArrayList;
  * @author chenyanping
  * @date 2020-07-30
  */
-public class FragmentTestActivity extends FragmentActivity {
+public class FragmentTestActivity extends FragmentActivity implements ViewPager.OnPageChangeListener{
     private ViewPager viewPager;
     private MyViewpagerFragmentAdapter viewpagerAdapter;
 
@@ -39,14 +39,30 @@ public class FragmentTestActivity extends FragmentActivity {
     }
 
     private void initData() {
-        ArrayList<Fragment> fragments = new ArrayList<>(4);
+        ArrayList<Fragment> fragments = new ArrayList<>();
         fragments.add(new HomeCombinationFragment());
         fragments.add(new LivingFragment());
         fragments.add(new ChatFragment());
         fragments.add(new PersonFragment());
 
         viewPager.setOffscreenPageLimit(fragments.size());
-        viewPager.setAdapter(new MyViewpagerFragmentAdapter(getSupportFragmentManager(),fragments));
+        viewpagerAdapter = new MyViewpagerFragmentAdapter(getSupportFragmentManager(),fragments);
+        viewPager.setAdapter(viewpagerAdapter);
+        viewPager.setCurrentItem(0);
     }
 
+    @Override
+    public void onPageScrolled(int i, float v, int i1) {
+
+    }
+
+    @Override
+    public void onPageSelected(int i) {
+
+    }
+
+    @Override
+    public void onPageScrollStateChanged(int i) {
+
+    }
 }
