@@ -17,6 +17,7 @@ import animation.AnimaTestActivity;
 import assetstest.AssetsTestAcitivity;
 import edittexttest.EditTextTestActivity;
 import fragmenttest.FragmentTestActivity;
+import gesturedetector.TestGestureDetectorActivity;
 import scrollnum.SmothScrollTestActivity;
 
 /**
@@ -40,6 +41,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private Button fragment;
 
+    private Button gesture;
+
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +59,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         smothScroll = findViewById(R.id.smothScrll);
         anima = findViewById(R.id.anima);
         fragment = findViewById(R.id.fragment);
+        gesture = findViewById(R.id.gesture);
     }
 
     private void initData(){
@@ -71,6 +75,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         smothScroll.setOnClickListener(this);
         anima.setOnClickListener(this);
         fragment.setOnClickListener(this);
+        gesture.setOnClickListener(this);
     }
 
     @Override
@@ -95,6 +100,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.fragment:
                 FragmentTestActivity.launch(MainActivity.this);
+                break;
+            case R.id.gesture:
+                TestGestureDetectorActivity.launch(MainActivity.this);
                 break;
                default:
                    break;

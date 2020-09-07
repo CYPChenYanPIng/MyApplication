@@ -61,7 +61,13 @@
         app:layout_constraintBottom_toTopOf="@id/editText"
         android:text="fragment"/>
 
-
+    <Button
+        android:id="@+id/gesture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/fragment"
+        app:layout_constraintBottom_toTopOf="@id/editText"
+        android:text="gesture"/>
 
 
 

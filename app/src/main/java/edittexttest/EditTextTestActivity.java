@@ -17,6 +17,9 @@ import android.widget.TextView;
 
 import com.example.uxin.myapplication.R;
 
+import java.util.HashMap;
+import java.util.HashSet;
+
 /**
  * 测试EditText
  * addTextChangedListener  输入框内容发生改变时执行
@@ -41,30 +44,41 @@ public class EditTextTestActivity extends Activity {
         setContentView(R.layout.activity_edittext_test);
         initView();
         initListener();
+
+        HashMap<Integer, String> map = new HashMap<>();
+        map.put(1, "se");
+        map.put(1, "we");
+
+        Log.i("cyp", "onCreate: "+map.size());
+
+        HashSet<String> set = new HashSet<>();
+        set.add("we");
+        set.add("we");
+        Log.i("cyp", "onCreate: set"+set.size());
     }
 
     private void initListener() {
         mEt.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                Log.i("cyp","beforeTextChanged: s+"+s);
+                Log.i("cyp", "beforeTextChanged: s+" + s);
             }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                Log.i("cyp","onTextChanged: s+"+s);
+                Log.i("cyp", "onTextChanged: s+" + s);
             }
 
             @Override
             public void afterTextChanged(Editable s) {
-                Log.i("cyp","afterTextChanged: s+"+s.toString());
+                Log.i("cyp", "afterTextChanged: s+" + s.toString());
             }
         });
 
         mEt.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                Log.i("cyp","KeyEvent:"+event);
+                Log.i("cyp", "KeyEvent:" + event);
                 if (event != null) {
                     switch (event.getAction()) {
                         case KeyEvent.ACTION_DOWN:
@@ -77,10 +91,10 @@ public class EditTextTestActivity extends Activity {
                             break;
                     }
                 }
-                Log.i("cyp","actionId:"+actionId);
+                Log.i("cyp", "actionId:" + actionId);
                 if (actionId == EditorInfo.IME_ACTION_SEND) {
                     hideKeyboard();
-                    Log.i("cyp","content:"+mEt.getText().toString());
+                    Log.i("cyp", "content:" + mEt.getText().toString());
                     // 业务处理
                     mEt.setText("");
                     return true;// 返回false 执行两次 软件盘不消失 返回true，只执行这一次，软件盘隐藏

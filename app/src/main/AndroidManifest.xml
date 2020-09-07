@@ -46,6 +46,9 @@
         <activity android:name="fragmenttest.FragmentTestActivity"
             android:screenOrientation="portrait"/>
 
+        <activity android:name="gesturedetector.TestGestureDetectorActivity"
+            android:screenOrientation="portrait"/>
+
         <receiver android:name=".PackgeTestBroadcastReceiver">
             <intent-filter>
                 <action android:name="com.uxin.live.image.test"/>
