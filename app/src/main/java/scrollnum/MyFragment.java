@@ -39,7 +39,7 @@ public class MyFragment extends Fragment {
     }
 
     private void initData() {
-        ArrayList arrayList = new ArrayList();
+        ArrayList<Integer> arrayList = new ArrayList();
         for (int i = 0;i < 100;i++) {
             arrayList.add(i);
         }

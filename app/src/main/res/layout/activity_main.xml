@@ -69,6 +69,22 @@
         app:layout_constraintBottom_toTopOf="@id/editText"
         android:text="gesture"/>
 
+    <Button
+        android:id="@+id/grid_rv_fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/gesture"
+        app:layout_constraintBottom_toTopOf="@id/editText"
+        android:text="grid+frag"/>
+
+    <Button
+        android:id="@+id/viewtest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/grid_rv_fragment"
+        app:layout_constraintBottom_toTopOf="@id/editText"
+        android:text="viewtest"/>
+
 
 
 </android.support.constraint.ConstraintLayout>

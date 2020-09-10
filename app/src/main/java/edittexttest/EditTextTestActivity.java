@@ -8,6 +8,7 @@ import android.support.annotation.Nullable;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.util.SparseArray;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -45,7 +46,8 @@ public class EditTextTestActivity extends Activity {
         initView();
         initListener();
 
-        HashMap<Integer, String> map = new HashMap<>();
+//        HashMap<Integer, String> map = new HashMap<>();
+        SparseArray<String> map = new SparseArray<>();
         map.put(1, "se");
         map.put(1, "we");
 

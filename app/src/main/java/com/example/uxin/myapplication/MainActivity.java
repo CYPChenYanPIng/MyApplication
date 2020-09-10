@@ -18,7 +18,9 @@ import assetstest.AssetsTestAcitivity;
 import edittexttest.EditTextTestActivity;
 import fragmenttest.FragmentTestActivity;
 import gesturedetector.TestGestureDetectorActivity;
+import scrollnum.GridRvAcitivity;
 import scrollnum.SmothScrollTestActivity;
+import viewtest.ViewTestActivity;
 
 /**
  *
@@ -43,6 +45,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private Button gesture;
 
+    private Button grid_rv_fragment;
+
+    private Button viewTest;
+
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +66,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         anima = findViewById(R.id.anima);
         fragment = findViewById(R.id.fragment);
         gesture = findViewById(R.id.gesture);
+        grid_rv_fragment = findViewById(R.id.grid_rv_fragment);
+        viewTest = findViewById(R.id.viewtest);
     }
 
     private void initData(){
@@ -76,6 +84,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         anima.setOnClickListener(this);
         fragment.setOnClickListener(this);
         gesture.setOnClickListener(this);
+        grid_rv_fragment.setOnClickListener(this);
+        viewTest.setOnClickListener(this);
     }
 
     @Override
@@ -103,6 +113,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.gesture:
                 TestGestureDetectorActivity.launch(MainActivity.this);
+                break;
+            case R.id.grid_rv_fragment:
+                GridRvAcitivity.launch(MainActivity.this);
+                break;
+            case R.id.viewtest:
+                ViewTestActivity.launch(MainActivity.this);
                 break;
                default:
                    break;
