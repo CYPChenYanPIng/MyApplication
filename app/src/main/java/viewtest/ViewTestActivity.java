@@ -40,7 +40,7 @@ public class ViewTestActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_test);
         mytextview = findViewById(R.id.mytextview);
-        mytextview.setVisibility(View.GONE);
+        mytextview.setVisibility(View.VISIBLE);
 
         customtextview = findViewById(R.id.customtextview);
         customtextview.setVisibility(View.VISIBLE);
@@ -50,6 +50,7 @@ public class ViewTestActivity extends Activity {
     }
 
     private void initListener() {
+        final int dip2px = CommonUtils.dip2px(ViewTestActivity.this, 20);
         // 设置为gone invisible时，点击事件不可用
         mytextview.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,7 +69,12 @@ public class ViewTestActivity extends Activity {
             public void onClick(View v) {
                 Log.i("text", "onClick: customtextview");
                 // 从gone设置为visible时，走了父布局的onMeasure  onLayout  ,自己的三个方法都走了
-                mytextview.setVisibility(View.VISIBLE);
+//                mytextview.setVisibility(View.VISIBLE);
+
+                // 代码设置.9图  会导致之前设置的padding失效
+                mytextview.setBackgroundResource(R.drawable.du_bg_label_new);
+                mytextview.setPadding(dip2px,dip2px,dip2px,dip2px);
+
             }
         });
 

@@ -13,6 +13,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginLeft="50dp"
         android:text="第一个测试"
+        style="@style/textview"
         android:background="@color/color_ff8383"/>
 
     <viewtest.CustomTextView

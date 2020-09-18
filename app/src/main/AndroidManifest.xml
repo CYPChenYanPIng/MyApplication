@@ -55,6 +55,9 @@
         <activity android:name="viewtest.ViewTestActivity"
             android:screenOrientation="portrait"/>
 
+        <activity android:name="bitmaptest.BitmapTestActivity"
+            android:screenOrientation="portrait"/>
+
         <receiver android:name=".PackgeTestBroadcastReceiver">
             <intent-filter>
                 <action android:name="com.uxin.live.image.test"/>

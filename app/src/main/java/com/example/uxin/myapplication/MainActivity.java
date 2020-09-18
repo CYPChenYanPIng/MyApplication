@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import animation.AnimaTestActivity;
 import assetstest.AssetsTestAcitivity;
+import bitmaptest.BitmapTestActivity;
 import edittexttest.EditTextTestActivity;
 import fragmenttest.FragmentTestActivity;
 import gesturedetector.TestGestureDetectorActivity;
@@ -49,6 +50,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private Button viewTest;
 
+    private Button bitmap;
+
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,6 +71,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         gesture = findViewById(R.id.gesture);
         grid_rv_fragment = findViewById(R.id.grid_rv_fragment);
         viewTest = findViewById(R.id.viewtest);
+        bitmap = findViewById(R.id.bitmap);
     }
 
     private void initData(){
@@ -86,6 +90,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         gesture.setOnClickListener(this);
         grid_rv_fragment.setOnClickListener(this);
         viewTest.setOnClickListener(this);
+        bitmap.setOnClickListener(this);
     }
 
     @Override
@@ -119,6 +124,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.viewtest:
                 ViewTestActivity.launch(MainActivity.this);
+                break;
+            case R.id.bitmap:
+                BitmapTestActivity.launch(MainActivity.this);
                 break;
                default:
                    break;
