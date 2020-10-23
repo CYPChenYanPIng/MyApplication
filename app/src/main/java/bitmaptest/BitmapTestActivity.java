@@ -74,8 +74,8 @@ public class BitmapTestActivity extends Activity {
         // 以上证明，APP查找图片资源时遵循先高后低原则，屏幕密度是420的手机，图片查找先从xxhdpi（480）查找，没有从xxxhdpi（640）查找，还是没有再从低的xhdpi查找，以此类推
 
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.icon_fox_sleep_0, options);
-//        imageView.setImageBitmap(bitmap);
-        imageView.setImageResource(R.mipmap.icon_fox_sleep_0);
+        imageView.setImageBitmap(bitmap);
+//        imageView.setImageResource(R.mipmap.icon_fox_sleep_0);
 
         // getByteCount获取图片的大小  图片大小计算方法  图片在运行手机中的宽高（所占用的像素点数），乘以图片每个像素点占用的大小（Config，比如：ARGB_8888占用4个字节）
         Log.i(TAG, "loadBitmap: bitmap getByteCount:" + bitmap.getByteCount() + "," + bitmap.getAllocationByteCount());
@@ -110,6 +110,15 @@ public class BitmapTestActivity extends Activity {
                 Log.i(TAG, "loadBitmap: "+imageView.getWidth()+","+imageView.getHeight());
             }
         });
+
+    }
+
+    private void compressImage(){
+//        BitmapFactory.Options options = new BitmapFactory.Options();
+//        options.inSampleSize = 2;
+//        BitmapFactory.decodeResource();
+//        Bitmap bitmap = new Bitmap();
+
 
     }
 }

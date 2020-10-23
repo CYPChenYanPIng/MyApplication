@@ -19,8 +19,11 @@ import bitmaptest.BitmapTestActivity;
 import edittexttest.EditTextTestActivity;
 import fragmenttest.FragmentTestActivity;
 import gesturedetector.TestGestureDetectorActivity;
+import interfacetest.IWork;
+import interfacetest.Worker;
 import scrollnum.GridRvAcitivity;
 import scrollnum.SmothScrollTestActivity;
+import threadtest.ThreadTestActivity;
 import viewtest.ViewTestActivity;
 
 /**
@@ -52,6 +55,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private Button bitmap;
 
+    private Button interfaceTest;
+
+    private Button threadTest;
+
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,10 +79,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         grid_rv_fragment = findViewById(R.id.grid_rv_fragment);
         viewTest = findViewById(R.id.viewtest);
         bitmap = findViewById(R.id.bitmap);
+        interfaceTest = findViewById(R.id.interface_test);
+        threadTest = findViewById(R.id.thread);
     }
 
     private void initData(){
-        LoadOrder loadOrder = new LoadOrder();
+        LoadOrder loadOrder = new LoadOrder("d");
         int num = loadOrder.getNum();
         Log.i("cyp","num:"+num);
     }
@@ -91,6 +100,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         grid_rv_fragment.setOnClickListener(this);
         viewTest.setOnClickListener(this);
         bitmap.setOnClickListener(this);
+        interfaceTest.setOnClickListener(this);
+        threadTest.setOnClickListener(this);
     }
 
     @Override
@@ -128,6 +139,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.bitmap:
                 BitmapTestActivity.launch(MainActivity.this);
                 break;
+            case R.id.interface_test:
+                testInterface();
+                break;
+            case R.id.thread:
+                ThreadTestActivity.start(MainActivity.this);
+                break;
                default:
                    break;
         }
@@ -139,6 +156,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         Log.i("cyp","requestCode:"+requestCode+", resultCode:"+resultCode+", Intent:"+data);
+    }
+
+    private void testInterface(){
+
+//        IWork work = new Worker();
+//        work.startWork("开心开心开心专注开心");
+
+        Class c = null;
+        try {
+            c = Class.forName("interfacetest.Worker");
+            Log.i("cyp","c:"+c);
+            Object o = c.newInstance();
+            IWork work = (IWork) o;
+            work.startWork("周五周五周五开心下班");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        }
+
     }
 
 

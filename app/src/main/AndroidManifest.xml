@@ -2,10 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.uxin.myapplication">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
     <application
         android:name=".ChenApplication"
         android:allowBackup="true"
@@ -14,55 +10,60 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"
+        <activity android:name="threadtest.ThreadTestActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
             <intent-filter android:autoVerify="true">
                 <action android:name="android.intent.action.VIEW" />
             </intent-filter>
         </activity>
-        <activity android:name="cross.scene.animation.ContactsActivity"></activity>
-
-        <activity android:name="assetstest.AssetsTestAcitivity"/>
-        <activity android:name="assetstest.YxWebviewActivity"/>
-
-        <activity android:name="edittexttest.EditTextTestActivity"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".JumpToCallBackActivity"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name="scrollnum.SmothScrollTestActivity"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name="animation.AnimaTestActivity"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name="fragmenttest.FragmentTestActivity"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name="gesturedetector.TestGestureDetectorActivity"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name="scrollnum.GridRvAcitivity"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name="viewtest.ViewTestActivity"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name="bitmaptest.BitmapTestActivity"
-            android:screenOrientation="portrait"/>
+        <activity android:name="cross.scene.animation.ContactsActivity" />
+        <activity android:name="assetstest.AssetsTestAcitivity" />
+        <activity android:name="assetstest.YxWebviewActivity" />
+        <activity
+            android:name="edittexttest.EditTextTestActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".JumpToCallBackActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="scrollnum.SmothScrollTestActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="animation.AnimaTestActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="fragmenttest.FragmentTestActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="gesturedetector.TestGestureDetectorActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="scrollnum.GridRvAcitivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="viewtest.ViewTestActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="bitmaptest.BitmapTestActivity"
+            android:screenOrientation="portrait" />
 
         <receiver android:name=".PackgeTestBroadcastReceiver">
             <intent-filter>
-                <action android:name="com.uxin.live.image.test"/>
+                <action android:name="com.uxin.live.image.test" />
             </intent-filter>
         </receiver>
     </application>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

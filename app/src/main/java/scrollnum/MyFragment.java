@@ -62,7 +62,7 @@ public class MyFragment extends Fragment {
         public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
             Integer integer = list.get(i);
             if (integer != null) {
-                myViewHolder.tvNum.setText(integer);
+                myViewHolder.tvNum.setText(String.valueOf(integer));
             }
         }
 

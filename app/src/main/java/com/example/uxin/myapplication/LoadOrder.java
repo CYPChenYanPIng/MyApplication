@@ -8,7 +8,7 @@ import android.util.SparseIntArray;
  * @author chenyanping
  * @date 2020-06-17
  */
-public class LoadOrder {
+public class LoadOrder extends PrarentLoadOrder{
     private static SparseIntArray map = new SparseIntArray();
 
     private int num = 30;
@@ -28,7 +28,8 @@ public class LoadOrder {
         Log.i("cyp","普通代码块");
     }
 
-    public LoadOrder() {
+    public LoadOrder(String s) {
+        // 子类默认会调用父类的无参构造方法
         Log.i("cyp","构造方法");
     }
 
