@@ -33,13 +33,23 @@ public class ThreadTest1 extends Thread{
 //        Log.i("cyp", "thread1: "+this.getThreadGroup().activeCount());
         synchronized (lockObject) {
             try {
-                Log.i("cyp", "Thread1: synchronized");
+//                Log.i("cyp", "Thread1: synchronized");
                 Log.i("cyp", "Thread1   wait 方法执行前"+this.getState());
                 lockObject.wait(10000);
                 Log.i("cyp", "Thread1   wait 方法执行后"+this.getState());
                 sleep(10000);
                 Log.i("cyp", "Thread1   sleep 方法结束"+this.getState());
+                Log.i("cyp","thread:"+Thread.currentThread());
             } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        synchronized (ThreadTest1.class){
+            try {
+                ThreadTest1.class.wait();
+
+            } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }

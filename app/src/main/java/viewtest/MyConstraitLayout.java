@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.support.constraint.ConstraintLayout;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.view.MotionEvent;
 
 /**
  * @author chenyanping
@@ -37,5 +38,23 @@ public class MyConstraitLayout extends ConstraintLayout {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         Log.i(TAG, "onDraw: ");
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        Log.i(TAG, "onTouchEvent: "+event.getAction());
+        return super.onTouchEvent(event);
+    }
+
+    @Override
+    public boolean onInterceptTouchEvent(MotionEvent ev) {
+        Log.i(TAG, "onInterceptTouchEvent: "+ev.getAction());
+        return super.onInterceptTouchEvent(ev);
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        Log.i(TAG, "dispatchTouchEvent: "+ev.getAction());
+        return super.dispatchTouchEvent(ev);
     }
 }

@@ -109,6 +109,13 @@
         app:layout_constraintBottom_toTopOf="@id/viewtest"
         android:text="thread"/>
 
+    <Button
+        android:id="@+id/dispatch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/thread"
+        app:layout_constraintBottom_toTopOf="@id/viewtest"
+        android:text="dispatch"/>
 
 
 </android.support.constraint.ConstraintLayout>

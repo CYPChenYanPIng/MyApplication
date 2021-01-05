@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
 import android.util.Log;
@@ -29,6 +31,10 @@ public class ViewTestActivity extends Activity {
     TextView customtextview;
     MyConstraitLayout constraitLayout;
 
+    private GradiendAndShader gradiendAndShader;
+
+    private PathView pathView;
+
     public static void launch(Context context) {
         Intent starter = new Intent(context, ViewTestActivity.class);
 //        starter.putExtra();
@@ -45,7 +51,8 @@ public class ViewTestActivity extends Activity {
         customtextview = findViewById(R.id.customtextview);
         customtextview.setVisibility(View.VISIBLE);
         constraitLayout = findViewById(R.id.constraint);
-
+        gradiendAndShader = findViewById(R.id.gradient);
+        pathView = findViewById(R.id.path);
         initListener();
     }
 

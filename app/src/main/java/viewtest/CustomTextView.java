@@ -18,6 +18,7 @@ public class CustomTextView extends AppCompatTextView {
 
     public CustomTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        setWillNotDraw(false);
     }
 
     @Override

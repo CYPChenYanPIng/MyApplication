@@ -23,4 +23,15 @@
         android:layout_marginTop="50dp"
         android:src="@mipmap/icon_me_share" />
 
+    <TextView
+        android:id="@+id/tv_animation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_novel_chapter_share"
+        android:layout_marginTop="30dp"
+        android:textSize="20sp"
+        android:background="@color/color_ff8383"
+        android:text="我想看看怎么变换的，能不能控制边界,动画测试"/>
+
 </android.support.constraint.ConstraintLayout>

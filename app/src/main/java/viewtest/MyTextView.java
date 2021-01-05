@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.view.MotionEvent;
 
 /**
  * @author chenyanping
@@ -36,5 +37,17 @@ public class MyTextView extends AppCompatTextView {
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
         super.onLayout(changed, left, top, right, bottom);
         Log.i(TAG, "onLayout: ");
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent event) {
+        Log.i(TAG, "dispatchTouchEvent: "+event.getAction());
+        return super.dispatchTouchEvent(event);
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        Log.i(TAG, "onTouchEvent: "+event.getAction());
+        return super.onTouchEvent(event);
     }
 }
