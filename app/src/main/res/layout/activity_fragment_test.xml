@@ -14,6 +14,7 @@
         app:layout_constraintBottom_toBottomOf="parent"/>
 
     <RadioGroup
+        android:id="@+id/radio_group"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -23,22 +24,26 @@
         android:weightSum="4">
 
         <RadioButton
+            android:id="@+id/first"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="首页"
             android:layout_weight="1"/>
 
         <RadioButton
+            android:id="@+id/live"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="直播间"
             android:layout_weight="1"/>
         <RadioButton
+            android:id="@+id/chat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="聊天"
             android:layout_weight="1"/>
         <RadioButton
+            android:id="@+id/my"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="我的"

@@ -58,6 +58,9 @@
         <activity android:name="shijianfenfa.DispatchTestActivity"
             android:screenOrientation="portrait"/>
 
+        <activity android:name="fragmenttest.OneFragmentActivity"
+            android:screenOrientation="portrait"/>
+
         <receiver android:name=".PackgeTestBroadcastReceiver">
             <intent-filter>
                 <action android:name="com.uxin.live.image.test" />

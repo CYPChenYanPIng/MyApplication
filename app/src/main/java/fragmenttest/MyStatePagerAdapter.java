@@ -3,32 +3,28 @@ package fragmenttest;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.util.Log;
 import android.view.ViewGroup;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
- * @author chenyanping
- * @date 2020-07-30
+ * Created by shuipingyue@uxin.com on 2021/1/13.
  */
-public class MyViewpagerFragmentAdapter extends FragmentPagerAdapter {
+public class MyStatePagerAdapter extends FragmentStatePagerAdapter {
 
-    private ArrayList<Fragment> fragments = new ArrayList<>();
-    private String TAG = "MyViewpagerFragmentAdapter";
+    private final String TAG = "StatePagerAdapter_Fragment";
+    List<Fragment> fragments ;
 
-    public MyViewpagerFragmentAdapter(FragmentManager fm, ArrayList<Fragment> fragments) {
+    public MyStatePagerAdapter(FragmentManager fm, List<Fragment> fragments) {
         super(fm);
         this.fragments = fragments;
     }
 
     @Override
-    public Fragment getItem(int position) {
-        if (fragments != null && position > -1 && position < fragments.size()) {
-            return fragments.get(position);
-        }
-        return null;
+    public Fragment getItem(int i) {
+        return fragments.get(i);
     }
 
     @Override
@@ -47,6 +43,5 @@ public class MyViewpagerFragmentAdapter extends FragmentPagerAdapter {
     public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
         Log.i(TAG, "destroyItem: ");
         super.destroyItem(container, position, object);
-
     }
 }

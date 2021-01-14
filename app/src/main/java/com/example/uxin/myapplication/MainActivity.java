@@ -27,6 +27,7 @@ import assetstest.AssetsTestAcitivity;
 import bitmaptest.BitmapTestActivity;
 import edittexttest.EditTextTestActivity;
 import fragmenttest.FragmentTestActivity;
+import fragmenttest.OneFragmentActivity;
 import gesturedetector.TestGestureDetectorActivity;
 import interfacetest.IWork;
 import interfacetest.Worker;
@@ -80,6 +81,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button threadTest;
 
     private Button dispatch;
+
+    private Button oneFrag;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -191,6 +194,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         interfaceTest = findViewById(R.id.interface_test);
         threadTest = findViewById(R.id.thread);
         dispatch = findViewById(R.id.dispatch);
+        oneFrag = findViewById(R.id.oneFrag);
     }
 
     private void initData(){
@@ -213,6 +217,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         interfaceTest.setOnClickListener(this);
         threadTest.setOnClickListener(this);
         dispatch.setOnClickListener(this);
+        oneFrag.setOnClickListener(this);
     }
 
     @Override
@@ -259,6 +264,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.dispatch:
                 DispatchTestActivity.start(MainActivity.this);
+                break;
+            case R.id.oneFrag:
+                OneFragmentActivity.start(MainActivity.this);
                 break;
                default:
                    break;
