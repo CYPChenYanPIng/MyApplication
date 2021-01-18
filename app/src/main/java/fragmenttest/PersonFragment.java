@@ -39,7 +39,9 @@ public class PersonFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         Log.i(TAG, "onCreateView: ");
-        return inflater.inflate(R.layout.fragment_person,null);
+//        return inflater.inflate(R.layout.fragment_person,null);
+        return inflater.inflate(R.layout.layout_wenti,null);
+
     }
 
     @Override

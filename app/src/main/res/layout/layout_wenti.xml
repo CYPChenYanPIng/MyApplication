@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_container"
+    android:layout_width="94dp"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="10dp"
+    android:background="@drawable/radio_rect_fff2f2f3_c9"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/fl_header_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp">
+
+        <ImageView
+            android:id="@+id/iv_ranking_crown"
+            android:layout_width="15dp"
+            android:layout_height="11dp"
+            android:layout_centerHorizontal="true"
+            tools:src="@drawable/icon_rank_top_one" />
+
+        <ImageView
+            android:id="@+id/iv_header"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_below="@+id/iv_ranking_crown"
+            android:layout_marginTop="-2dp"
+            android:scaleType="centerCrop" />
+
+        <View
+            android:id="@+id/v_head_pic_border"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_below="@+id/iv_ranking_crown"
+            android:layout_marginTop="-2dp"
+            tools:background="@drawable/radio_rect_f1ce5f_line_2_corner_8" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:ellipsize="end"
+        android:paddingLeft="6dp"
+        android:paddingRight="6dp"
+        android:singleLine="true"
+        android:textColor="@color/black_27292B"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        tools:text="霄云" />
+
+    <TextView
+        android:id="@+id/tv_popularity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="14dp"
+        android:drawableLeft="@drawable/radio_icon_role_sentiment_line"
+        android:drawablePadding="3dp"
+        android:ellipsize="end"
+        android:paddingLeft="6dp"
+        android:paddingRight="6dp"
+        android:singleLine="true"
+        android:textColor="#9927292B"
+        android:textSize="11sp"
+        tools:text="75,979" />
+
+</LinearLayout>

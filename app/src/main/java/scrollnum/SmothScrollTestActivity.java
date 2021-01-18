@@ -107,6 +107,7 @@ public class SmothScrollTestActivity extends Activity implements View.OnClickLis
 
         @Override
         public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+            //  没有传viewGroup 无法加载layout.xml中的params，比如宽高，margin等
             // 正确的
             View view = LayoutInflater.from(context).inflate(R.layout.item_smoth_num_layout,viewGroup,false);
             return new MyViweHolder(view);

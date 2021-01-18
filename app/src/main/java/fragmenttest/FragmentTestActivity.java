@@ -18,6 +18,7 @@ import com.example.uxin.myapplication.R;
 import java.util.ArrayList;
 
 /**
+ * fragment+viewpager
  * @author chenyanping
  * @date 2020-07-30
  */
@@ -59,9 +60,11 @@ public class FragmentTestActivity extends FragmentActivity implements ViewPager.
 //        viewpagerAdapter = new MyViewpagerFragmentAdapter(getSupportFragmentManager(),fragments);
         viewpagerAdapter = new MyStatePagerAdapter(getSupportFragmentManager(),fragments);
         viewPager.setAdapter(viewpagerAdapter);
+
+        viewPager.setPageTransformer(false,new MyPagerTransformer(viewPager));
+
         viewPager.setCurrentItem(0);
         viewPager.addOnPageChangeListener(this);
-
 
         radioGroup.check(R.id.first);
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -80,7 +83,7 @@ public class FragmentTestActivity extends FragmentActivity implements ViewPager.
                         break;
                     case R.id.chat:
                         Log.i(TAG, "onCheckedChanged: chat"+currentItem);
-                        viewPager.setCurrentItem(2,true);
+                        viewPager.setCurrentItem(2);
                         break;
                     case R.id.my:
                         Log.i(TAG, "onCheckedChanged: my"+currentItem);
