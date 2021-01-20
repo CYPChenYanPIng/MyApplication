@@ -3,10 +3,12 @@ package scrollnum;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,6 +38,8 @@ public class SmothScrollTestActivity extends Activity implements View.OnClickLis
     private Button scroll2;
 
     private Button scroll3;
+
+    private String TAG = "SmothScrollTestActivity";
 
     public static void launch(Context context) {
         Intent starter = new Intent(context, SmothScrollTestActivity.class);
@@ -99,6 +103,25 @@ public class SmothScrollTestActivity extends Activity implements View.OnClickLis
         scroll1 = findViewById(R.id.scroll1);
         scroll2 = findViewById(R.id.scroll2);
         scroll3 = findViewById(R.id.scroll3);
+
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+
+
+            @Override
+            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                RecyclerView.LayoutManager layoutManager = recyclerView.getLayoutManager();
+                if(layoutManager instanceof LinearLayoutManager) {
+                    int firstVisibleItemPosition = ((LinearLayoutManager) layoutManager).findFirstVisibleItemPosition();
+                }
+                View viewByPosition = layoutManager.findViewByPosition(0);
+
+                Rect r = new Rect();
+                boolean localVisibleRect = viewByPosition.getLocalVisibleRect(r);
+                Log.i(TAG, "onScrolled: "+localVisibleRect+r.top);
+
+            }
+        });
     }
 
     class MyAdapter extends RecyclerView.Adapter{

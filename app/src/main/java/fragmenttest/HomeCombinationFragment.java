@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import fragmenttest.loop.LoopViewPagerAdapter;
-import kotlin.jvm.internal.FunctionBase;
+import fragmenttest.transformer.MyPagerTransformer;
 
 
 /**

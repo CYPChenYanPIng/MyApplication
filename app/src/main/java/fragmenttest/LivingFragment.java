@@ -1,6 +1,7 @@
 package fragmenttest;
 
 import android.content.Context;
+import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -18,6 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import fragmenttest.pageradapter.MyLivingFragmentPagerAdapter;
+import fragmenttest.transformer.MyTabTransformer;
 import viewtest.MyTextView;
 
 
@@ -79,15 +81,23 @@ public class LivingFragment extends Fragment {
 
         mTabLayout.setupWithViewPager(mViewPager);
 
-        TabLayout.Tab tabAt = mTabLayout.getTabAt(0);
+
         // tab中的tabView是LinearLayout，icon是add到index为0的位置
 //        tabAt.setIcon(R.drawable.icon_live);
         // 修改title的文案
 //        tabAt.setText("开发jkfjkdk");
         // 不管用  
 //        mTabLayout.setTabTextColors(R.color.color_646161,R.color.color_ff8383);
-        // TODO: 2021/1/20 5:12 PM cyp onCreateView 
+        // TODO: 2021/1/20 5:12 PM cyp onCreateView
 
+        TabLayout.Tab tabAt = mTabLayout.getTabAt(0);
+        tabAt.setCustomView(R.layout.layout_tatlayout_custom_tab);
+        tabAt.setIcon(R.drawable.gashapon_share_logo);
+
+
+        // TODO: 2021/1/20 8:33 PM cyp onCreateView
+        MyTabTransformer tabTransformer = new MyTabTransformer(mTabLayout,mViewPager);
+        tabTransformer.setScale(0.2f);
 
         mViewPager.setCurrentItem(0);
 
