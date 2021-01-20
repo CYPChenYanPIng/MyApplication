@@ -1,7 +1,6 @@
 package fragmenttest;
 
 import android.content.Context;
-import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -20,7 +19,6 @@ import java.util.List;
 
 import fragmenttest.pageradapter.MyLivingFragmentPagerAdapter;
 import fragmenttest.transformer.MyTabTransformer;
-import viewtest.MyTextView;
 
 
 /**
