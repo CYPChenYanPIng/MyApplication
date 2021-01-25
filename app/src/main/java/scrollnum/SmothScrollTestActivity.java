@@ -113,16 +113,20 @@ public class SmothScrollTestActivity extends Activity implements View.OnClickLis
 
                 RecyclerView.LayoutManager layoutManager = recyclerView.getLayoutManager();
                 View viewByPosition = layoutManager.findViewByPosition(0);
-                RecyclerView.ViewHolder childViewHolder = recyclerView.getChildViewHolder(viewByPosition);
-                if (childViewHolder instanceof MyViweHolder) {
 
-                    Rect r = new Rect();
-                    boolean localVisibleRect1 = ((MyViweHolder) childViewHolder).tvNumber.getLocalVisibleRect(r);
-                    // 如果tvNumber处于完全可见的位置，r.top一直为0，当顶部部分滑动到不可见，r.top开始从1开始递增，
-                    // 递增到tvNumber的height的高度时，tvNumber就完全不可见了，此时r.top的值突变为-height的值，
-                    Log.i(TAG, "onScrolled: "+localVisibleRect1+r.top);
-                    //以屏幕的左上角为参考系；
-                    viewByPosition.getGlobalVisibleRect(r);
+                if (viewByPosition != null) {
+
+                    RecyclerView.ViewHolder childViewHolder = recyclerView.getChildViewHolder(viewByPosition);
+                    if (childViewHolder instanceof MyViweHolder) {
+
+                        Rect r = new Rect();
+                        boolean localVisibleRect1 = ((MyViweHolder) childViewHolder).tvNumber.getLocalVisibleRect(r);
+                        // 如果tvNumber处于完全可见的位置，r.top一直为0，当顶部部分滑动到不可见，r.top开始从1开始递增，
+                        // 递增到tvNumber的height的高度时，tvNumber就完全不可见了，此时r.top的值突变为-height的值，
+                        Log.i(TAG, "onScrolled: " + localVisibleRect1 + r.top);
+                        //以屏幕的左上角为参考系；
+                        viewByPosition.getGlobalVisibleRect(r);
+                    }
                 }
 
             }

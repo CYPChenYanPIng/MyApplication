@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,8 @@ import android.view.ViewGroup;
 import com.example.uxin.myapplication.R;
 
 import org.jetbrains.annotations.Nullable;
+
+import java.util.zip.Inflater;
 
 
 /**
@@ -22,6 +25,8 @@ public class PersonFragment extends Fragment {
 
 
     private String TAG = "PersonFragment";
+
+    private RecyclerView recyclerView;
 
     @Override
     public void onAttach(Context context) {
@@ -39,9 +44,10 @@ public class PersonFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         Log.i(TAG, "onCreateView: ");
-//        return inflater.inflate(R.layout.fragment_person,null);
-        return inflater.inflate(R.layout.layout_wenti,null);
+        View inflate = inflater.inflate(R.layout.fragment_person, null);
+        recyclerView = inflate.findViewById(R.id.rv_recyclerview);
 
+        return inflate;
     }
 
     @Override
@@ -66,5 +72,33 @@ public class PersonFragment extends Fragment {
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
         Log.i(TAG, "setUserVisibleHint: "+isVisibleToUser);
+    }
+
+    private class MyAdapter extends RecyclerView.Adapter {
+
+        @NonNull
+        @Override
+        public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+            View inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_smoth_num_layout, viewGroup, false);
+
+            return new MyViewHolder(inflate);
+        }
+
+        @Override
+        public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
+
+        }
+
+        @Override
+        public int getItemCount() {
+            return 0;
+        }
+    }
+
+    private class MyViewHolder extends RecyclerView.ViewHolder {
+
+        public MyViewHolder(@NonNull View itemView) {
+            super(itemView);
+        }
     }
 }

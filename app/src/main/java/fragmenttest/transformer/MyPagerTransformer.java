@@ -43,7 +43,7 @@ public class MyPagerTransformer implements ViewPager.PageTransformer {
      * @param view
      * @return
      *
-     * todo 如果viewpage刷新了页面数量这个transformer就废掉了，得重新缓存，暂时不写这段代码了
+     *
      */
     private int getViewPos(View view){
 
