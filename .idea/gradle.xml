@@ -12,6 +12,8 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/component" />
+            <option value="$PROJECT_DIR$/mylibrary" />
             <option value="$PROJECT_DIR$/okhttp3.10.0" />
             <option value="$PROJECT_DIR$/retrofit2.4.0" />
           </set>

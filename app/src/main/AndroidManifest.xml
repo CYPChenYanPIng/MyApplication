@@ -60,6 +60,10 @@
 
         <activity android:name="fragmenttest.OneFragmentActivity"
             android:screenOrientation="portrait"/>
+       <activity android:name="span.SpanTestActivity"/>
+
+        <activity android:name="color.ColorTestActivity"/>
+
 
         <receiver android:name=".PackgeTestBroadcastReceiver">
             <intent-filter>

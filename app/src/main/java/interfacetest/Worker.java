@@ -16,4 +16,8 @@ public class Worker implements IWork {
         Toast.makeText(ChenApplication.getContext(),s,Toast.LENGTH_LONG).show();
     }
 
+    protected void talk(){
+
+    }
+
 }

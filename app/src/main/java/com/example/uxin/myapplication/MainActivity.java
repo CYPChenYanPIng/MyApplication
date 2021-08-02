@@ -16,6 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import color.ColorTestActivity;
 import java.io.IOException;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Type;
@@ -31,7 +32,7 @@ import fragmenttest.OneFragmentActivity;
 import gesturedetector.TestGestureDetectorActivity;
 import interfacetest.IWork;
 import interfacetest.Worker;
-import kotlintest.TestKt;
+
 import okhttp3.OkHttpClient;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -44,6 +45,7 @@ import retrofit2.http.Path;
 import scrollnum.GridRvAcitivity;
 import scrollnum.SmothScrollTestActivity;
 import shijianfenfa.DispatchTestActivity;
+import span.SpanTestActivity;
 import threadtest.ThreadTestActivity;
 import viewtest.ViewTestActivity;
 
@@ -84,6 +86,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private Button oneFrag;
 
+    private Button span;
+
+    private Button color;
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -91,9 +96,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initView();
         initListener();
         initData();
-
-
-        TestKt.printlen("wo");
 
         OkHttpClient client = new OkHttpClient().newBuilder()
                 .readTimeout(10, TimeUnit.SECONDS)
@@ -195,6 +197,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         threadTest = findViewById(R.id.thread);
         dispatch = findViewById(R.id.dispatch);
         oneFrag = findViewById(R.id.oneFrag);
+        span = findViewById(R.id.span);
+        color = findViewById(R.id.color);
     }
 
     private void initData(){
@@ -218,6 +222,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         threadTest.setOnClickListener(this);
         dispatch.setOnClickListener(this);
         oneFrag.setOnClickListener(this);
+        span.setOnClickListener(this);
+        color.setOnClickListener(this);
     }
 
     @Override
@@ -267,6 +273,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.oneFrag:
                 OneFragmentActivity.start(MainActivity.this);
+                break;
+            case R.id.span:
+                SpanTestActivity.start(MainActivity.this);
+                break;
+            case R.id.color:
+                Intent color = new Intent(this,ColorTestActivity.class);
+                startActivity(color);
                 break;
                default:
                    break;

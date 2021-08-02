@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 
 import com.example.uxin.myapplication.R;
@@ -42,6 +43,7 @@ public class BitmapTestActivity extends Activity {
         initView();
         loadBitmap(ivBitmap);
 //        ivBitmap.setImageResource(R.mipmap.icon_fox_sleep_0);
+        initListener();
     }
 
     private void initView() {
@@ -52,6 +54,16 @@ public class BitmapTestActivity extends Activity {
         ivImage.setImageDrawable(drawable);
         ivMdpi = findViewById(R.id.iv_mdpi);
         ivMdpi.setImageResource(R.mipmap.icon_radio_22);
+
+
+    }
+    private void initListener() {
+        ivBitmap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ivBitmap.setVisibility(View.GONE);
+            }
+        });
 
 
     }

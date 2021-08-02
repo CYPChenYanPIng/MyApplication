@@ -7,4 +7,10 @@
     <color name="color_ff8383">#FF8383</color>
     <color name="color_white">#ffffff</color>
     <color name="black_27292B">#27292B</color>
+    <color name="ffff">#ff8F959E</color>
+    <color name="fffff">#00ffffff</color>
+    <color name="eeee">#1C4CBA</color>
+    <color name="nomal">#1C4CBA</color>
+    <color name="nomal2">#ff000000</color>
+
 </resources>
